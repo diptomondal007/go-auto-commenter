@@ -20,9 +20,6 @@ var rootCmd = &cobra.Command{
 	},
 }
 
-type A struct {
-}
-
 // Execute ...
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
