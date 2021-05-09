@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
+	"go-auto-commenter/pkg"
 	"log"
 	"os"
 )
@@ -12,22 +13,14 @@ var rootCmd = &cobra.Command{
 	Long:	"auto commenter is a tool to automatically comment out all the exported functions",
 	Run: func(cmd *cobra.Command, args []string) {
 		if ifDotExist(args) {
-			autoCommentDir(".")
+			pkg.AutoCommentDir(".")
+		} else {
+
 		}
 	},
 }
 
 type A struct {
-}
-
-// TODO: document exported function
-func NewA() {
-
-}
-
-// TODO: document exported function
-func (a *A) New() {
-
 }
 
 // Execute ...
