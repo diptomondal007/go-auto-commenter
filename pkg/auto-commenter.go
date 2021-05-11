@@ -17,6 +17,7 @@ import (
 	"github.com/fatih/astrewrite"
 )
 
+// AutoCommentDir ...
 func AutoCommentDir(dir string) {
 	pkg, err := build.ImportDir(dir, 0)
 	autoCommentImportedPkg(pkg, err)
@@ -56,28 +57,29 @@ func readingFiles(files ...string) {
 	_ = autoCmntr.AutoCommentFiles(fileBodyMap)
 }
 
+// AutoCommenter ...
 type AutoCommenter struct{}
 
 type pkg struct {
-	fileSet		*token.FileSet
-	files		map[string]*file
-	typesPkg	*types.Package
-	typesInfo	*types.Info
+	fileSet   *token.FileSet
+	files     map[string]*file
+	typesPkg  *types.Package
+	typesInfo *types.Info
 }
 
 type file struct {
-	pkg		*pkg
-	f		*ast.File
-	fset		*token.FileSet
-	src		[]byte
-	filename	string
+	pkg      *pkg
+	f        *ast.File
+	fset     *token.FileSet
+	src      []byte
+	filename string
 }
 
 // AutoCommentFiles ...
 func (auto *AutoCommenter) AutoCommentFiles(filesMap map[string][]byte) error {
 	pkg := &pkg{
-		fileSet:	token.NewFileSet(),
-		files:		make(map[string]*file),
+		fileSet: token.NewFileSet(),
+		files:   make(map[string]*file),
 	}
 
 	var packageName string
@@ -95,11 +97,11 @@ func (auto *AutoCommenter) AutoCommentFiles(filesMap map[string][]byte) error {
 		}
 
 		pkg.files[fileName] = &file{
-			pkg:		pkg,
-			f:		f,
-			fset:		pkg.fileSet,
-			src:		body,
-			filename:	fileName,
+			pkg:      pkg,
+			f:        f,
+			fset:     pkg.fileSet,
+			src:      body,
+			filename: fileName,
 		}
 	}
 
@@ -133,8 +135,8 @@ func (file *file) autoComment() {
 		if ok {
 			if fn.Name.IsExported() && fn.Doc.Text() == "" {
 				comment := &ast.Comment{
-					Text:	"// " + fn.Name.Name + " ...",
-					Slash:	fn.Pos() - 1,
+					Text:  "// " + fn.Name.Name + " ...",
+					Slash: fn.Pos() - 1,
 				}
 
 				cg := &ast.CommentGroup{
@@ -173,9 +175,9 @@ func (file *file) autoComment() {
 }
 
 type functionSpec struct {
-	Name	string
-	Prefix	string
-	Kind	string
+	Name   string
+	Prefix string
+	Kind   string
 }
 
 func (file *file) isLintedFuncDoc(fn *ast.FuncDecl) (*functionSpec, error) {
@@ -188,18 +190,18 @@ func (file *file) isLintedFuncDoc(fn *ast.FuncDecl) (*functionSpec, error) {
 	prefix := fn.Name.Name + " "
 	if fn.Doc == nil {
 		return &functionSpec{
-			Name:	name,
-			Prefix:	prefix,
-			Kind:	kind,
+			Name:   name,
+			Prefix: prefix,
+			Kind:   kind,
 		}, fmt.Errorf("exported %s %s should have comment or be unexported", kind, name)
 	}
 	s := fn.Doc.Text()
 
 	if !strings.HasPrefix(s, prefix) {
 		return &functionSpec{
-			Name:	name,
-			Prefix:	prefix,
-			Kind:	kind,
+			Name:   name,
+			Prefix: prefix,
+			Kind:   kind,
 		}, fmt.Errorf(`comment on exported %s %s should be of the form "%s..."`, kind, name, prefix)
 	}
 	return nil, nil

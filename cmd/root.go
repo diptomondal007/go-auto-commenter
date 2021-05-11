@@ -8,9 +8,9 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:	"auto-commenter",
-	Short:	"auto commenter",
-	Long:	"auto commenter is a tool to automatically comment out all the exported functions",
+	Use:   "auto-commenter",
+	Short: "auto commenter",
+	Long:  "auto commenter is a tool to automatically comment out all the exported functions",
 	Run: func(cmd *cobra.Command, args []string) {
 		if ifDotExist(args) {
 			pkg.AutoCommentDir(".")
