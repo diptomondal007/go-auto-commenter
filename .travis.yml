@@ -9,7 +9,7 @@ dist: trusty
 sudo: false
 branches:
   only:
-    - master
+    - main
 install:
   - go get github.com/mattn/goveralls
 script:
