@@ -1,3 +1,5 @@
+build_all: build_mac build_linux build_linux_386 build_windows build_windows_386
+
 build_mac: ## BUILD for Mac
 		@export GOARCH="amd64"
 		@export GOOS="darwin"
