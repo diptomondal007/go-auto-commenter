@@ -6,6 +6,20 @@ A Go tool to add comments automatically to all the exported methods.
 [![Go Report Card](https://goreportcard.com/badge/github.com/diptomondal007/go-auto-commenter)](https://goreportcard.com/report/github.com/diptomondal007/go-auto-commenter)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
+#### Installation
+```shell
+1. Clone this repo
+2. cd to the cloned directory
+3. Type ./install in terminal and hit enter
+```
+
+#### Uninstallation
+```shell
+1. Clone this repo
+2. cd to the cloned directory
+3. Type ./uninstall in terminal and hit enter
+```
+
 #### To auto comment all the files in current directory
 ```shell
 autocomment .
