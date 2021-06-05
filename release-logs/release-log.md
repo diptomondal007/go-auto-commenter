@@ -1,0 +1,16 @@
+# Version 1 (2021-06-05)
+## Feature
+* added uninstall.sh ([4d4049f](https://github.com/diptomondal007/go-auto-commenter/commit/4d4049f084d01d8a1864242a41616dcc38d617aa))
+* updated install.sh ([28ac271](https://github.com/diptomondal007/go-auto-commenter/commit/28ac27124791a38ba4c57fde206110d4ad805d87))
+* added functionality for dir and file auto commenting ([7f2e6cf](https://github.com/diptomondal007/go-auto-commenter/commit/7f2e6cf5ff8f345242cdd48fa519fe42bd5e8fe1))
+* added install.sh ([6a595f8](https://github.com/diptomondal007/go-auto-commenter/commit/6a595f850cdfd8d36a135c2510ee15d9dae91665))
+* updated makefile to build for all os ([9a68c89](https://github.com/diptomondal007/go-auto-commenter/commit/9a68c891da56b56c21e907c192e9a1c9b192db5f))
+* added makefile ([8a62f96](https://github.com/diptomondal007/go-auto-commenter/commit/8a62f966e991cecca7b9a5f51d9df659fdd7de86))
+* go fmted ([3921d77](https://github.com/diptomondal007/go-auto-commenter/commit/3921d77ced466a85f053a4c61f671c2083bf036b))
+* travis.ci updated ([7c7fb17](https://github.com/diptomondal007/go-auto-commenter/commit/7c7fb17ecb96bc91cf6cf4d48cb4bbc07d46bd9a))
+* travis.ci updated ([ada38b1](https://github.com/diptomondal007/go-auto-commenter/commit/ada38b16cbb27b55b52f4798a5bac78c815a51bc))
+* removed unwanted code ([bae71c2](https://github.com/diptomondal007/go-auto-commenter/commit/bae71c2539039441a77b136c90e55e278c620ac6))
+* code moved to pkg ([658a7ad](https://github.com/diptomondal007/go-auto-commenter/commit/658a7ad9a0aa5c3e63b433b50edbe35f4a1481d6))
+* added main go mod and git ignore ([b8f19b5](https://github.com/diptomondal007/go-auto-commenter/commit/b8f19b51e9aba5a85b07582998d1b52060aa6cd4))
+* auto commenter working ([40d979a](https://github.com/diptomondal007/go-auto-commenter/commit/40d979afe01120b4b4bd023e20205e35667af037))
+
