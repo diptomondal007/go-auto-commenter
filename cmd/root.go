@@ -8,9 +8,9 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:	"autocomment",
-	Short:	"goautocommenter",
-	Long:	`
+	Use:   "autocomment",
+	Short: "goautocommenter",
+	Long: `
 ╔═╗╦ ╦╔╦╗╔═╗  ╔═╗╔═╗╔╦╗╔╦╗╔═╗╔╗╔╔╦╗╔═╗╦═╗
 ╠═╣║ ║ ║ ║ ║  ║  ║ ║║║║║║║║╣ ║║║ ║ ║╣ ╠╦╝
 ╩ ╩╚═╝ ╩ ╚═╝  ╚═╝╚═╝╩ ╩╩ ╩╚═╝╝╚╝ ╩ ╚═╝╩╚═

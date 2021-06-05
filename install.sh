@@ -25,7 +25,7 @@ if [ "$OS" == "Darwin" ]; then
   echo "$INSTALL_START_MESSAGE"
   chmod +x $TARGET
   echo "$INSTALL_END_MESSAGE"
-  autocomment
+  autocomment -h
 
 elif [ "$OS" == "Linux" ]; then
       if [ "$ARCH" == "x86_64" ]; then
@@ -33,7 +33,7 @@ elif [ "$OS" == "Linux" ]; then
         echo "$INSTALL_START_MESSAGE"
         chmod +x $TARGET
         echo "$INSTALL_END_MESSAGE"
-        autocomment
+        autocomment -h
       fi
 
       if [ "$ARCH" == "i386" ]; then
@@ -41,6 +41,6 @@ elif [ "$OS" == "Linux" ]; then
           echo "$INSTALL_START_MESSAGE"
           chmod +x $TARGET
           echo "$INSTALL_END_MESSAGE"
-          autocomment
+          autocomment -h
       fi
 fi
