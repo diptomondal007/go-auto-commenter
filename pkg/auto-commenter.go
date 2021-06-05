@@ -12,6 +12,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"path/filepath"
 	"strings"
 
 	"github.com/fatih/astrewrite"
@@ -26,7 +27,6 @@ func AutoCommentDir(dir string) {
 func autoCommentImportedPkg(pkg *build.Package, err error) {
 	if err != nil {
 		if _, nogo := err.(*build.NoGoError); nogo {
-
 			return
 		}
 		_, _ = fmt.Fprintln(os.Stderr, err)
@@ -36,7 +36,16 @@ func autoCommentImportedPkg(pkg *build.Package, err error) {
 	files := make([]string, 0)
 
 	files = append(files, pkg.GoFiles...)
+	if pkg.Dir != "." {
+		for i, f := range files {
+			files[i] = filepath.Join(pkg.Dir, f)
+		}
+	}
 
+	readingFiles(files...)
+}
+
+func AutoCommentFiles(files ...string) {
 	readingFiles(files...)
 }
 
@@ -45,8 +54,9 @@ func readingFiles(files ...string) {
 
 	for _, file := range files {
 		fileBody, err := ioutil.ReadFile(file)
+		//log.Println(file)
 		if err != nil {
-			log.Println(err)
+			log.Println("+++++++++",err)
 			continue
 		}
 
