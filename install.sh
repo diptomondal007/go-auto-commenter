@@ -2,6 +2,9 @@
 
 exec_curl(){
   echo "Found auto commenter Version: $VERSION"
+  echo "Download may take few minutes depending on your internet speed"
+  echo "Downloading go auto commenter  to $2"
+  curl -L --silent --connect-timeout 30 --retry-delay 5 --retry 5 -o "$2" "$1"
 }
 
 OS=`uname`
@@ -22,6 +25,7 @@ if [ "$OS" == "Darwin" ]; then
   echo "$INSTALL_START_MESSAGE"
   chmod +x $TARGET
   echo "$INSTALL_END_MESSAGE"
+  autocomment
 
 elif [ "$OS" == "Linux" ]; then
       if [ "$ARCH" == "x86_64" ]; then
@@ -29,6 +33,7 @@ elif [ "$OS" == "Linux" ]; then
         echo "$INSTALL_START_MESSAGE"
         chmod +x $TARGET
         echo "$INSTALL_END_MESSAGE"
+        autocomment
       fi
 
       if [ "$ARCH" == "i386" ]; then
@@ -36,5 +41,6 @@ elif [ "$OS" == "Linux" ]; then
           echo "$INSTALL_START_MESSAGE"
           chmod +x $TARGET
           echo "$INSTALL_END_MESSAGE"
+          autocomment
       fi
 fi
