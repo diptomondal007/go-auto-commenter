@@ -8,9 +8,14 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:	"auto-commenter",
-	Short:	"auto commenter",
-	Long:	"auto commenter is a tool to automatically comment out all the exported functions",
+	Use:	"autocomment",
+	Short:	"goautocommenter",
+	Long:	`
+╔═╗╦ ╦╔╦╗╔═╗  ╔═╗╔═╗╔╦╗╔╦╗╔═╗╔╗╔╔╦╗╔═╗╦═╗
+╠═╣║ ║ ║ ║ ║  ║  ║ ║║║║║║║║╣ ║║║ ║ ║╣ ╠╦╝
+╩ ╩╚═╝ ╩ ╚═╝  ╚═╝╚═╝╩ ╩╩ ╩╚═╝╝╚╝ ╩ ╚═╝╩╚═
+Go auto commenter. Add comments to exported fields automatically
+`,
 	Run: func(cmd *cobra.Command, args []string) {
 		dirs := make([]string, 0)
 		files := make([]string, 0)
