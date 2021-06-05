@@ -22,5 +22,19 @@ if [ "$OS" == "Darwin" ]; then
   echo "$INSTALL_START_MESSAGE"
   chmod +x $TARGET
   echo "$INSTALL_END_MESSAGE"
-  autocomment
+
+elif [ "$OS" == "Linux" ]; then
+      if [ "$ARCH" == "x86_64" ]; then
+        exec_curl $URL/releases/download/$VERSION/linux_amd64 $TARGET
+        echo "$INSTALL_START_MESSAGE"
+        chmod +x $TARGET
+        echo "$INSTALL_END_MESSAGE"
+      fi
+
+      if [ "$ARCH" == "i386" ]; then
+          exec_curl $URL/releases/download/$VERSION/linux_i386 $TARGET
+          echo "$INSTALL_START_MESSAGE"
+          chmod +x $TARGET
+          echo "$INSTALL_END_MESSAGE"
+      fi
 fi
