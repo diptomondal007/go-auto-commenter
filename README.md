@@ -33,6 +33,15 @@ autocomment [DIRNAME]
 #### To auto comment files
 ```shell
 autocomment [FILENAME]...
+## Example
+before ->
+func AB() {
+
+}
+after ->
+// AB ...
+func AB(){
+}
 ```
 ### License
 go-auto-commenter is released under the Apache 2.0 license. See [LICENSE.txt](https://github.com/diptomondal007/go-auto-commenter/blob/main/LICENSE)
