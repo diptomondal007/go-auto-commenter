@@ -6,6 +6,12 @@ build_mac: ## BUILD for Mac
 		@export CGO_ENABLED=1
 		@go build -o mac_amd64 -v .
 
+build_mac: ## BUILD for Mac
+		@export GOARCH="arm64"
+		@export GOOS="darwin"
+		@export CGO_ENABLED=1
+		@go build -o mac_arm64 -v .
+
 build_linux: ### BUILD for Linux
 		@export GOARCH="amd64"
 		@export GOOS="linux"
@@ -23,7 +29,6 @@ build_windows_386: ###WINDOWS
 		@export GOOS="windows"
 		@export CGO_ENABLED=0
 		@go build -o windows_386.exe -v
-
 
 build_windows: ### WINDOWS
 		@export GOARCH="amd64"
